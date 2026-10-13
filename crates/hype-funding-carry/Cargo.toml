@@ -1,0 +1,30 @@
+[package]
+name = "hype-funding-carry"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.91"
+license = "MIT"
+
+[features]
+default = ["live-sdk"]
+live-sdk = ["dep:alloy", "dep:hyperliquid_rust_sdk", "dep:rmp-serde"]
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+dotenvy = "0.15"
+reqwest = { version = "0.12", features = ["json"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "signal", "sync", "time"] }
+futures-util = "0.3"
+fs2 = "0.4"
+tokio-tungstenite = { version = "0.20", features = ["native-tls"] }
+uuid = { version = "1", features = ["v4", "v5"] }
+alloy = { version = "1.0", default-features = false, features = ["signer-local", "sol-types"], optional = true }
+rmp-serde = { version = "1", optional = true }
+
+# Pin the last upstream commit. Signing/order support remains feature-gated so
+# read-only builds do not need the live exchange SDK.
+hyperliquid_rust_sdk = { git = "https://github.com/hyperliquid-dex/hyperliquid-rust-sdk.git", rev = "aac75585daf12d0a3761126cc7da7a5e035b5853", optional = true }

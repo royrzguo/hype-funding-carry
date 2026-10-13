@@ -1,0 +1,12 @@
+/target/
+/.env
+/.env.*
+!/.env.example
+/logs/
+/state/
+/data/
+/credentials/
+*.cred
+*.key
+*.pem
+.DS_Store

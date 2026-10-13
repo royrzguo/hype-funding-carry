@@ -1,0 +1,3 @@
+[workspace]
+members = ["crates/hype-funding-carry"]
+resolver = "2"

@@ -1,0 +1,37 @@
+{
+  "parameter_version": "hype-funding-carry-production-reference-v2",
+  "account_mode": "eoa",
+  "target_deployment_ratio": 1.4,
+  "deployment_band": {
+    "lower": 1.0,
+    "target": 1.4,
+    "upper": 1.8
+  },
+  "entry_create_bps": 3.0,
+  "entry_keep_bps": 1.5,
+  "patient_exit_create_bps": -2.0,
+  "patient_exit_keep_bps": 0.0,
+  "normal_exit_create_bps": 0.0,
+  "normal_exit_keep_bps": 2.0,
+  "maker_soft_timeout_ms": 60000,
+  "maker_hard_timeout_ms": 300000,
+  "delta_emergency_usd": 200.0,
+  "naked_timeout_ms": 30000,
+  "min_trade_notional_usd": 10.0,
+  "max_single_order_notional_usd": 1000.0,
+  "hedge_depth_utilization": 0.2,
+  "max_market_age_ms": 5000,
+  "max_market_clock_skew_ms": 2000,
+  "max_leg_timestamp_skew_ms": 1500,
+  "agent_expiry_warning_ms": 604800000,
+  "entry_policy": {
+    "negative_next_funding_weight": 1.0
+  },
+  "risk": {
+    "warning_pmr": 0.65,
+    "maker_reduce_pmr": 0.75,
+    "taker_reduce_pmr": 0.8,
+    "maker_target_pmr": 0.65,
+    "taker_target_pmr": 0.72
+  }
+}
